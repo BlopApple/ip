@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  * Duke class that runs the main program.
  */
 public class Duke extends Application {
-    private static final double WINDOW_MIN_WIDTH = 360.0;
+    private static final double WINDOW_MIN_WIDTH = 420.0;
     private static final double WINDOW_MIN_HEIGHT = 480.0;
     private static final double STAGE_WIDTH_OFFSET = 15.0;
     private static final double STAGE_HEIGHT_OFFSET = 40.0;

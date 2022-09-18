@@ -9,6 +9,7 @@ import javafx.scene.layout.GridPane;
 public class MainWindow extends GridPane {
     private DialogContainer dialogContainer;
     private InputContainer userInputContainer;
+    private SideBarContainer sideBarContainer;
     private ChatBot chatBot;
 
     /**
@@ -20,7 +21,9 @@ public class MainWindow extends GridPane {
         this.chatBot = chatBot;
         this.dialogContainer = new DialogContainer(this);
         this.userInputContainer = new InputContainer(this);
-        this.addColumn(0, dialogContainer, userInputContainer);
+        this.sideBarContainer = new SideBarContainer();
+        this.addColumn(0, sideBarContainer);
+        this.addColumn(1, dialogContainer, userInputContainer);
     }
 
     /**
@@ -31,6 +34,7 @@ public class MainWindow extends GridPane {
         this.chatBot.initialize();
         this.dialogContainer.initializeDialog(this.chatBot.getLatestResponse());
         this.userInputContainer.initializeEventHandlers(this, this.chatBot);
+        this.sideBarContainer.initializeEventHandlers();
     }
 
     /**

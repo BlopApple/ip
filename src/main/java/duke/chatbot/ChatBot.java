@@ -171,11 +171,10 @@ public class ChatBot {
             inputScanner.close();
 
             Command command = this.commandManager.getCommand(commandKey);
-            if (command.isValid()) {
-                response = command.execute(arguments);
-            } else {
+            if (!(command.isValid())) {
                 throw new InvalidCommandException(this.personality);
             }
+            response = command.execute(arguments);
 
             this.taskManager.saveData(this.personality);
             System.out.println(wrapMessage(response));
